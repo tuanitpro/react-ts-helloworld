@@ -8,8 +8,8 @@ export default function App() {
   const name: string = 'Tuan';
   const first_name: string = 'first_name';
   const date_of_birth: string = 'date_of_birth';
-  const [dataSource, setDataSource] = useState<User[]>([User]);
-  const [users, setUsers] = useState<User[]>([User]);
+  const [dataSource, setDataSource] = useState<User[]>([]);
+  const [users, setUsers] = useState<User[]>([]);
   const [sortBy, setSortBy] = useState<string>('first_name');
   const [sortDirection, setSortDirection] = useState<string>('asc');
 
