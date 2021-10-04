@@ -1,9 +1,13 @@
 import React from 'react';
-
+import User from './models/user';
+type Props = {
+  users: User[];
+  handleSortData: Function;
+};
 export default function UsersTable({
   users,
   handleSortData,
-}): React.ReactElement {
+}: Props): React.ReactElement {
   const buttonSortName = (title: string): React.ReactElement => {
     return (
       <button

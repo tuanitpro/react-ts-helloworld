@@ -5,20 +5,20 @@ import UsersTable from './components/users-table';
 import User from './models/user';
 
 export default function App() {
-  const name: string = 'Tuan';
-  const first_name: string = 'first_name';
-  const date_of_birth: string = 'date_of_birth';
+  const name: String = 'Tuan';
+  const first_name: String = 'first_name';
+  const date_of_birth: String = 'date_of_birth';
   const [dataSource, setDataSource] = useState<User[]>([]);
   const [users, setUsers] = useState<User[]>([]);
-  const [sortBy, setSortBy] = useState<string>('first_name');
-  const [sortDirection, setSortDirection] = useState<string>('asc');
+  const [sortBy, setSortBy] = useState<String>('first_name');
+  const [sortDirection, setSortDirection] = useState<String>('asc');
 
   useEffect(() => {
     getUsers();
   }, []);
 
   const getUsers = (): void => {
-    const urlEndpoint: string =
+    const urlEndpoint: String =
       'https://random-data-api.com/api/users/random_user?size=10';
     axios
       .get(urlEndpoint)
@@ -39,7 +39,7 @@ export default function App() {
       .catch((error) => console.error(error));
   };
 
-  const handleSortData = (sortBy: string, sortDirection: string): void => {
+  const handleSortData = (sortBy: String, sortDirection: String): void => {
     let dataSort = dataSource;
     setSortBy(sortBy);
     setSortDirection(sortDirection);
