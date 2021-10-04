@@ -1,0 +1,12 @@
+h1,
+p {
+  font-family: Lato;
+}
+table {
+  width: 100%;
+  border: solid 1px #ccc;
+}
+th,
+td {
+  border: solid 1px #ccc;
+}
