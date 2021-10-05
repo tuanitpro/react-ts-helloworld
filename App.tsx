@@ -5,9 +5,9 @@ import UsersTable from './components/users-table';
 import User from './models/user';
 
 export default function App() {
-  const name: String = 'Tuan';
-  const first_name: String = 'first_name';
-  const date_of_birth: String = 'date_of_birth';
+  const name: string = 'Tuan';
+  const first_name: string = 'first_name';
+  const date_of_birth: string = 'date_of_birth';
   const [dataSource, setDataSource] = useState<User[]>([]);
   const [users, setUsers] = useState<User[]>([]);
   const [sortBy, setSortBy] = useState<String>('first_name');
@@ -18,10 +18,10 @@ export default function App() {
   }, []);
 
   const getUsers = (): void => {
-    const urlEndpoint: String =
+    const urlEndpoint: string =
       'https://random-data-api.com/api/users/random_user?size=10';
     axios
-      .get(urlEndpoint)
+      .get<User[]>(urlEndpoint)
       .then((response: AxiosResponse<User[]>) => {
         const dataSource: User[] = response.data;
         setDataSource(dataSource);
